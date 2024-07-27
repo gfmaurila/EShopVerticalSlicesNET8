@@ -14,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{BFED3295-CFF
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C52A446F-2A8D-4E4F-933F-9CF8D3E1CC4F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateway-60", "ApiGateway-60", "{BE642CBA-377D-47B3-9F02-712D75675201}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateway", "ApiGateway", "{BE642CBA-377D-47B3-9F02-712D75675201}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{C6C866F0-8B4F-44C4-B8C4-B9F27FF9F0AB}"
 EndProject
@@ -70,19 +70,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Gateway", "backend\API.
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{B70E4F44-BD0A-4B83-BE43-D563ACC004A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Basket", "backend\BuildingBlocks\Domain\Domain.Basket\Domain.Basket.csproj", "{E1E15C2E-F1A4-4705-901D-98550B84FFD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Basket", "backend\BuildingBlocks\Domain\Domain.Basket\Domain.Basket.csproj", "{E1E15C2E-F1A4-4705-901D-98550B84FFD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Catalog", "backend\BuildingBlocks\Domain\Domain.Catalog\Domain.Catalog.csproj", "{441B6300-7527-4645-AA94-6115A5026499}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Catalog", "backend\BuildingBlocks\Domain\Domain.Catalog\Domain.Catalog.csproj", "{441B6300-7527-4645-AA94-6115A5026499}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Identity", "backend\BuildingBlocks\Domain\Domain.Identity\Domain.Identity.csproj", "{96C6F528-3194-4BF2-8B20-E2439C167AD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Identity", "backend\BuildingBlocks\Domain\Domain.Identity\Domain.Identity.csproj", "{96C6F528-3194-4BF2-8B20-E2439C167AD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Ordering", "backend\BuildingBlocks\Domain\Domain.Ordering\Domain.Ordering.csproj", "{58A51881-AF9A-4E66-956D-8CEE8A8D4482}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Ordering", "backend\BuildingBlocks\Domain\Domain.Ordering\Domain.Ordering.csproj", "{58A51881-AF9A-4E66-956D-8CEE8A8D4482}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Payment", "backend\BuildingBlocks\Domain\Domain.Payment\Domain.Payment.csproj", "{0C175DEA-F279-49F1-BE90-BA8E780F76A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Payment", "backend\BuildingBlocks\Domain\Domain.Payment\Domain.Payment.csproj", "{0C175DEA-F279-49F1-BE90-BA8E780F76A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Webhooks", "backend\BuildingBlocks\Domain\Domain.Webhooks\Domain.Webhooks.csproj", "{4C3D2A30-7762-48E2-958B-D37A11783EB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Webhooks", "backend\BuildingBlocks\Domain\Domain.Webhooks\Domain.Webhooks.csproj", "{4C3D2A30-7762-48E2-958B-D37A11783EB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Employee", "backend\BuildingBlocks\Domain\Domain.Employee\Domain.Employee.csproj", "{F7EC45E8-07D9-486C-9FE4-5198DF644163}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Employee", "backend\BuildingBlocks\Domain\Domain.Employee\Domain.Employee.csproj", "{F7EC45E8-07D9-486C-9FE4-5198DF644163}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Register", "backend\BuildingBlocks\Domain\Domain.Register\Domain.Register.csproj", "{A8A6EAD3-03E2-4A7D-BBCF-8444243BA646}"
 EndProject

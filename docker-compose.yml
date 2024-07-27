@@ -50,7 +50,6 @@ services:
       - api.catalog.webapi
       - api.employee.webapi
       - api.identity.webapi
-      - api.identity.webapi
       - api.ordering.webapi
       - api.payment.webapi
       - api.register.webapi
@@ -63,7 +62,6 @@ services:
       - api.basket.webapi
       - api.catalog.webapi
       - api.employee.webapi
-      - api.identity.webapi
       - api.identity.webapi
       - api.ordering.webapi
       - api.payment.webapi
