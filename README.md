@@ -1,5 +1,5 @@
 
-## API C# Vertical Slice Architecture
+## API C# E Shop Vertical Slices .NET8
 
 <div>
     <h2>Estrutura do Projeto</h2>
@@ -69,7 +69,7 @@
     <table>
         <tr>
             <td>Clone o repositório usando:</td>
-            <td>https://github.com/gfmaurila/poc.vertical.slices-full-stack-react.net8.git</td>
+            <td>https://github.com/gfmaurila/EShopVerticalSlicesNET8.git</td>
         </tr>
         <tr>
             <td>Configurando o Docker e Docker Compose</td>
