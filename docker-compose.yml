@@ -1,0 +1,399 @@
+version: '3.9'
+# docker-compose up --build
+# docker-compose -f docker-compose.yml -f docker-compose.override.yml up --build
+networks:
+  app-backend:
+    driver: bridge
+  app-frontend:
+    driver: bridge
+
+services:
+
+# APIS BEGIN -----------------------------------------------------------------------------
+
+  # https://www.bezkoder.com/docker-compose-react-nodejs-mysql/
+  poc.admin.react.webapi:
+    container_name: web.admin.react.webapi
+    restart: always
+    build:
+      context: ./frontend/web.admin.react
+      dockerfile: Dockerfile
+    expose:
+      - 3000
+    ports:
+      - '80:3000'
+    volumes:
+      - .:/app
+      - /frontend/web.admin.react/app/node_modules
+    networks:
+      - app-frontend 
+    depends_on:
+      - api.admin.webapi
+    links:
+      - api.admin.webapi
+
+  api.gateway.webapi:
+    image: ${DOCKER_REGISTRY-}api.gateway.webapi
+    container_name: api.gateway.webapi
+    restart: always
+    build:
+      context: .
+      dockerfile: backend/API.Gateway/Dockerfile
+    expose:
+      - 5060
+    ports:
+      - 5060:5060
+    links:
+      - poc.admin.react.webapi
+      - api.admin.webapi
+      - api.basket.webapi
+      - api.catalog.webapi
+      - api.employee.webapi
+      - api.identity.webapi
+      - api.identity.webapi
+      - api.ordering.webapi
+      - api.payment.webapi
+      - api.register.webapi
+      - api.webhooks.webapi
+    networks:
+      - app-backend
+    depends_on:
+      - poc.admin.react.webapi
+      - api.admin.webapi
+      - api.basket.webapi
+      - api.catalog.webapi
+      - api.employee.webapi
+      - api.identity.webapi
+      - api.identity.webapi
+      - api.ordering.webapi
+      - api.payment.webapi
+      - api.register.webapi
+      - api.webhooks.webapi
+
+  api.admin.webapi:
+    image: ${DOCKER_REGISTRY-}api.admin.webapi
+    container_name: api.admin.webapi
+    restart: always
+    build:
+      context: .
+      dockerfile: backend/API.Admin/Dockerfile
+    expose:
+      - 5061
+    ports:
+      - 5061:5061
+    links:
+      - sqlserver
+      - mongoserver
+      - kafka
+      - rabbitmq
+    networks:
+      - app-backend
+    depends_on:
+      - sqlserver
+      - mongoserver
+      - kafka
+      - rabbitmq 
+
+  api.basket.webapi:
+    image: ${DOCKER_REGISTRY-}api.basket.webapi
+    container_name: api.basket.webapi
+    restart: always
+    build:
+      context: .
+      dockerfile: backend/API.Basket/Dockerfile
+    expose:
+      - 5062
+    ports:
+      - 5062:5062
+    links:
+      - sqlserver
+      - mongoserver
+      - kafka
+      - rabbitmq
+    networks:
+      - app-backend
+    depends_on:
+      - sqlserver
+      - mongoserver
+      - kafka
+      - rabbitmq 
+
+  api.catalog.webapi:
+    image: ${DOCKER_REGISTRY-}api.catalog.webapi
+    container_name: api.catalog.webapi
+    restart: always
+    build:
+      context: .
+      dockerfile: backend/API.Catalog/Dockerfile
+    expose:
+      - 5063
+    ports:
+      - 5063:5063
+    links:
+      - sqlserver
+      - mongoserver
+      - kafka
+      - rabbitmq
+    networks:
+      - app-backend
+    depends_on:
+      - sqlserver
+      - mongoserver
+      - kafka
+      - rabbitmq
+
+  api.employee.webapi:
+    image: ${DOCKER_REGISTRY-}api.employee.webapi
+    container_name: api.employee.webapi
+    restart: always
+    build:
+      context: .
+      dockerfile: backend/API.Employee/Dockerfile
+    expose:
+      - 5064
+    ports:
+      - 5064:5064
+    links:
+      - sqlserver
+      - mongoserver
+      - kafka
+      - rabbitmq
+    networks:
+      - app-backend
+    depends_on:
+      - sqlserver
+      - mongoserver
+      - kafka
+      - rabbitmq
+
+  api.identity.webapi:
+    image: ${DOCKER_REGISTRY-}api.identity.webapi
+    container_name: api.identity.webapi
+    restart: always
+    build:
+      context: .
+      dockerfile: backend/API.Identity/Dockerfile
+    expose:
+      - 5065
+    ports:
+      - 5065:5065
+    links:
+      - sqlserver
+      - mongoserver
+      - kafka
+      - rabbitmq
+    networks:
+      - app-backend
+    depends_on:
+      - sqlserver
+      - mongoserver
+      - kafka
+      - rabbitmq 
+
+  api.ordering.webapi:
+    image: ${DOCKER_REGISTRY-}api.ordering.webapi
+    container_name: api.ordering.webapi
+    restart: always
+    build:
+      context: .
+      dockerfile: backend/API.Ordering/Dockerfile
+    expose:
+      - 5066
+    ports:
+      - 5066:5066
+    links:
+      - sqlserver
+      - mongoserver
+      - kafka
+      - rabbitmq
+    networks:
+      - app-backend
+    depends_on:
+      - sqlserver
+      - mongoserver
+      - kafka
+      - rabbitmq
+
+  api.payment.webapi:
+    image: ${DOCKER_REGISTRY-}api.payment.webapi
+    container_name: api.payment.webapi
+    restart: always
+    build:
+      context: .
+      dockerfile: backend/API.Payment/Dockerfile
+    expose:
+      - 5067
+    ports:
+      - 5067:5067
+    links:
+      - sqlserver
+      - mongoserver
+      - kafka
+      - rabbitmq
+    networks:
+      - app-backend
+    depends_on:
+      - sqlserver
+      - mongoserver
+      - kafka
+      - rabbitmq 
+
+  api.register.webapi:
+    image: ${DOCKER_REGISTRY-}api.register.webapi
+    container_name: api.register.webapi
+    restart: always
+    build:
+      context: .
+      dockerfile: backend/API.Register/Dockerfile
+    expose:
+      - 5068
+    ports:
+      - 5068:5068
+    links:
+      - sqlserver
+      - mongoserver
+      - kafka
+      - rabbitmq
+    networks:
+      - app-backend
+    depends_on:
+      - sqlserver
+      - mongoserver
+      - kafka
+      - rabbitmq 
+
+  api.webhooks.webapi:
+    image: ${DOCKER_REGISTRY-}api.webhooks.webapi
+    container_name: api.webhooks.webapi
+    restart: always
+    build:
+      context: .
+      dockerfile: backend/API.Webhooks/Dockerfile
+    expose:
+      - 5069
+    ports:
+      - 5069:5069
+    links:
+      - sqlserver
+      - mongoserver
+      - kafka
+      - rabbitmq
+    networks:
+      - app-backend
+    depends_on:
+      - sqlserver
+      - mongoserver
+      - kafka
+      - rabbitmq 
+  
+
+# APIS END -----------------------------------------------------------------------------
+
+# DB BEGIN -----------------------------------------------------------------------------
+
+  # SQL Server
+  # Add-Migration Inicial -Context SqlServerDb
+  # Update-Database -Context SqlServerDb
+  sqlserver:
+    image: mcr.microsoft.com/azure-sql-edge:latest
+    cap_add: [ 'SYS_PTRACE' ]
+    hostname: mssql
+    container_name: sqlserver
+    restart: always
+    expose:
+      - 1433
+    ports:
+      - 1433:1433
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=@Poc2Minimal@Api
+    networks:
+      - app-backend
+
+
+  # Redis Cache Server
+  redis:
+    image: redis:latest
+    container_name: redis
+    command: redis-server --requirepass Poc2Minimal@Api
+    restart: always
+    expose:
+      - 6379
+    ports:
+      - 6379:6379
+    networks:
+      - app-backend
+
+  mongoserver:
+    image: mongo:latest
+    container_name: mongoserver
+    restart: always
+    expose:
+      - 27017
+    ports:
+      - 27017:27017
+    networks:
+      - app-backend
+
+# DB END -----------------------------------------------------------------------------
+
+# WORKER BEGIN -----------------------------------------------------------------------------
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    restart: always
+    networks: 
+      - app-backend
+    ports:
+      - 2181:2181
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+  
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    restart: always
+    networks: 
+      - app-backend
+    depends_on:
+      - zookeeper
+    ports:
+      - 9092:9092
+      - 29092:29092
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+
+  # http://localhost:9000    
+  kafdrop:
+    image: obsidiandynamics/kafdrop
+    container_name: kafdrop
+    restart: always
+    ports:
+      - "9000:9000"  # Porta que o Kafdrop ficará acessível
+    environment:
+      KAFKA_BROKERCONNECT: "kafka:29092"  # Endereço do broker Kafka, ajuste conforme necessário
+      JVM_OPTS: "-Xms32M -Xmx64M"  # Configurações de JVM, ajuste conforme suas necessidades
+      SERVER_SERVLET_CONTEXTPATH: "/"  # Contexto raiz do Kafdrop
+    depends_on:
+      - kafka  # Garante que o Kafka esteja pronto antes de iniciar o Kafdrop
+    networks:
+      - app-backend   
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: 'rabbitmq'
+    restart: always
+    ports:
+        - 5672:5672
+        - 15672:15672
+    volumes:
+        - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+        - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+    networks:
+        - app-backend
+
+# WORKER END ----------------------------------------------------------------------------- 
