@@ -27,10 +27,29 @@ services:
       - /frontend/web.admin.react/app/node_modules
     networks:
       - app-frontend 
+      - app-backend 
     depends_on:
+      - api.gateway.webapi
       - api.admin.webapi
+      - api.basket.webapi
+      - api.catalog.webapi
+      - api.employee.webapi
+      - api.identity.webapi
+      - api.ordering.webapi
+      - api.payment.webapi
+      - api.register.webapi
+      - api.webhooks.webapi
     links:
+      - api.gateway.webapi
       - api.admin.webapi
+      - api.basket.webapi
+      - api.catalog.webapi
+      - api.employee.webapi
+      - api.identity.webapi
+      - api.ordering.webapi
+      - api.payment.webapi
+      - api.register.webapi
+      - api.webhooks.webapi
 
   api.gateway.webapi:
     image: ${DOCKER_REGISTRY-}api.gateway.webapi
@@ -44,7 +63,6 @@ services:
     ports:
       - 5060:5060
     links:
-      - poc.admin.react.webapi
       - api.admin.webapi
       - api.basket.webapi
       - api.catalog.webapi
@@ -55,9 +73,9 @@ services:
       - api.register.webapi
       - api.webhooks.webapi
     networks:
+      - app-frontend 
       - app-backend
     depends_on:
-      - poc.admin.react.webapi
       - api.admin.webapi
       - api.basket.webapi
       - api.catalog.webapi

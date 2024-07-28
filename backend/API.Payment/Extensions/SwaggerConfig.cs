@@ -17,7 +17,7 @@ public static class SwaggerConfig
                 "v1",
                 new OpenApiInfo
                 {
-                    Title = "API Admin",
+                    Title = "API.Payment",
                     Version = "v1"
                 }
             );
