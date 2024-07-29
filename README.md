@@ -65,6 +65,16 @@
 </div>
 
 <div>
+    <h2>Tarefas</h2>
+    <table>
+        <tr>
+            <td>Tarefas do projeto:</td>
+            <td>https://github.com/users/gfmaurila/projects/21/views/1</td>
+        </tr>
+    </table>    
+</div>
+
+<div>
     <h2>Configuração e Instalação</h2>
     <table>
         <tr>
