@@ -17,7 +17,7 @@ public static class SwaggerConfig
                 "v1",
                 new OpenApiInfo
                 {
-                    Title = "API.Register",
+                    Title = "API.Webhooks",
                     Version = "v1"
                 }
             );

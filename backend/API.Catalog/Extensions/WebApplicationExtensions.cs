@@ -1,7 +1,7 @@
 ﻿using API.Catalog.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
 
-namespace poc.vertical.slices.net8.Extensions;
+namespace API.Catalog.Extensions;
 
 public static class WebApplicationExtensions
 {

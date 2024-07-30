@@ -1,5 +1,6 @@
-﻿using API.Admin.Domain.User;
-using API.Admin.Infrastructure.Database.Mappings;
+﻿using API.Admin.Infrastructure.Database.Mappings;
+using API.Admin.Infrastructure.Domain;
+using API.Admin.Infrastructure.Domain.User;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Admin.Infrastructure.Database;
@@ -14,9 +15,12 @@ public class EFSqlServerContext : DbContext
 
     public virtual DbSet<UserEntity> User { get; set; }
 
+    public virtual DbSet<Article> Article { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfiguration(new UserConfiguration());
+        modelBuilder.ApplyConfiguration(new ArticleConfiguration());
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

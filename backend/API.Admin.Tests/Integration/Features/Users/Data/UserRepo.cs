@@ -1,6 +1,6 @@
-﻿using API.Admin.Domain.User;
-using API.Admin.Feature.Users.GetUser;
+﻿using API.Admin.Feature.Users.GetUser;
 using API.Admin.Infrastructure.Database;
+using API.Admin.Infrastructure.Domain.User;
 using API.Admin.Tests.Integration.Utilities;
 using API.Admin.Tests.Integration.Utilities.Redis;
 using Bogus;

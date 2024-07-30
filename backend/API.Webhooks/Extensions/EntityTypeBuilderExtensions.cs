@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using poc.core.api.net8;
 
-namespace poc.vertical.slices.net8.Extensions;
+namespace API.Webhooks.Extensions;
 
 public static class EntityTypeBuilderExtensions
 {

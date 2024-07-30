@@ -1,4 +1,4 @@
-﻿using API.Admin.Domain.User.Events.Auth;
+﻿using API.Admin.Infrastructure.Domain.User.Events.Auth;
 using MediatR;
 using poc.core.api.net8.AppSettings;
 using poc.core.api.net8.Enumerado;

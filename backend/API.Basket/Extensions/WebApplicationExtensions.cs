@@ -1,7 +1,7 @@
 ﻿using API.Basket.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
 
-namespace poc.vertical.slices.net8.Extensions;
+namespace API.Basket.Extensions;
 
 public static class WebApplicationExtensions
 {

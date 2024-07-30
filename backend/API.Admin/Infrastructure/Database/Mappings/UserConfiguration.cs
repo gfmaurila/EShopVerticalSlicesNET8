@@ -1,7 +1,7 @@
-﻿using API.Admin.Domain.User;
+﻿using API.Admin.Extensions;
+using API.Admin.Infrastructure.Domain.User;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using poc.vertical.slices.net8.Extensions;
 using System.Text.Json;
 
 namespace API.Admin.Infrastructure.Database.Mappings;

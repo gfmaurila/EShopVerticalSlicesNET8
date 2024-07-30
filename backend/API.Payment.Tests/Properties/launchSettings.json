@@ -2,9 +2,6 @@
   "profiles": {
     "API.Payment.Tests": {
       "commandName": "Project"
-    },
-    "Container (Dockerfile)": {
-      "commandName": "Docker"
     }
   }
 }

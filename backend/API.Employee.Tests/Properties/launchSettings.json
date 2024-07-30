@@ -2,9 +2,6 @@
   "profiles": {
     "API.Employee.Tests": {
       "commandName": "Project"
-    },
-    "Container (Dockerfile)": {
-      "commandName": "Docker"
     }
   }
 }

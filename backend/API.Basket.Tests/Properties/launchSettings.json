@@ -2,9 +2,6 @@
   "profiles": {
     "API.Basket.Tests": {
       "commandName": "Project"
-    },
-    "Container (Dockerfile)": {
-      "commandName": "Docker"
     }
   }
 }

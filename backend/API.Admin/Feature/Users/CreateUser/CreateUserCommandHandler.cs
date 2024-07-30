@@ -1,5 +1,5 @@
-﻿using API.Admin.Domain.User;
-using API.Admin.Infrastructure.Database.Repositories.Interfaces;
+﻿using API.Admin.Infrastructure.Database.Repositories.Interfaces;
+using API.Admin.Infrastructure.Domain.User;
 using MediatR;
 using poc.core.api.net8.Extensions;
 using poc.core.api.net8.Response;

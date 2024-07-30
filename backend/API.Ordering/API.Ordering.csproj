@@ -10,6 +10,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Migrations\20240423223702_Inicial.Designer.cs~RFfbf6e.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
 	  <PackageReference Include="Carter" Version="8.0.0" />
 	  <PackageReference Include="Ardalis.Result" Version="9.1.0" />
 	  <PackageReference Include="FluentValidation" Version="11.9.2" />
@@ -45,17 +49,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Infrastructure\Integration\Auth\" />
-    <Folder Include="Infrastructure\Integration\Kafka\" />
-    <Folder Include="Infrastructure\Integration\RabbiMQ\" />
-  </ItemGroup>
-
-  <ItemGroup>
 	  <InternalsVisibleTo Include="API.Ordering.Tests" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\BuildingBlocks\Domain\Domain.Identity\Domain.Identity.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Common\Enumerable\Enumerable.csproj" />
+	</ItemGroup>
 
 </Project>

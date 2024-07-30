@@ -1,4 +1,4 @@
-﻿using API.Admin.Domain;
+﻿using API.Admin.Infrastructure.Domain;
 using poc.core.api.net8.Enumerado;
 
 namespace API.Admin.Feature.Users.GetUser;

@@ -2,9 +2,6 @@
   "profiles": {
     "API.Catalog.Tests": {
       "commandName": "Project"
-    },
-    "Container (Dockerfile)": {
-      "commandName": "Docker"
     }
   }
 }

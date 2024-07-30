@@ -45,17 +45,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Infrastructure\Integration\Auth\" />
-    <Folder Include="Infrastructure\Integration\Kafka\" />
-    <Folder Include="Infrastructure\Integration\RabbiMQ\" />
-  </ItemGroup>
-
-  <ItemGroup>
 	  <InternalsVisibleTo Include="API.Payment.Tests" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\BuildingBlocks\Domain\Domain.Payment\Domain.Payment.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Common\Enumerable\Enumerable.csproj" />
+	</ItemGroup>
 
 </Project>

@@ -1,12 +1,12 @@
-﻿using API.Admin.Domain.User;
-using API.Admin.Feature.Users.CreateUser;
+﻿using API.Admin.Feature.Users.CreateUser;
 using API.Admin.Feature.Users.UpdateEmail;
 using API.Admin.Feature.Users.UpdatePassword;
 using API.Admin.Feature.Users.UpdateUser;
+using API.Admin.Infrastructure.Domain.User;
 using Bogus;
+using Enumerable.User;
 using poc.core.api.net8.Enumerado;
 using poc.core.api.net8.Extensions;
-using poc.core.api.net8.User;
 using poc.core.api.net8.ValueObjects;
 
 namespace API.Admin.Tests.Integration.Users.Fakes;
@@ -242,26 +242,31 @@ internal static class UserFake
     public static List<string> RoleUserAuth()
     => new List<string>
         {
-            ERoleUserAuth.USER.ToString(),
-            ERoleUserAuth.CREATE_USER.ToString(),
-            ERoleUserAuth.UPDATE_USER.ToString(),
-            ERoleUserAuth.DELETE_USER.ToString(),
-            ERoleUserAuth.GET_USER.ToString(),
-            ERoleUserAuth.GET_BY_ID_USER.ToString(),
+            ERole.AdminCommand.ToString(),
+            ERole.AdminQuery.ToString(),
 
-            ERoleUserAuth.NOTIFICATION.ToString(),
-            ERoleUserAuth.CREATE_NOTIFICATION.ToString(),
-            ERoleUserAuth.DELETE_NOTIFICATION.ToString(),
-            ERoleUserAuth.GET_NOTIFICATION.ToString(),
+            ERole.RegisterCommand.ToString(),
+            ERole.RegisterQuery.ToString(),
 
-            ERoleUserAuth.REGION.ToString(),
-            ERoleUserAuth.COUNTRI.ToString(),
-            ERoleUserAuth.DEPARTMENT.ToString(),
-            ERoleUserAuth.EMPLOYEE.ToString(),
-            ERoleUserAuth.JOB.ToString(),
-            ERoleUserAuth.JOB_HISTORY.ToString(),
-            ERoleUserAuth.LOCATION.ToString(),
+            ERole.BasketCommand.ToString(),
+            ERole.BasketQuery.ToString(),
 
-            ERoleUserAuth.MKT_POST.ToString(),
+            ERole.CatalogCommand.ToString(),
+            ERole.CatalogQuery.ToString(),
+
+            ERole.EmployeeCommand.ToString(),
+            ERole.EmployeeQuery.ToString(),
+
+            ERole.IdentityCommand.ToString(),
+            ERole.IdentityQuery.ToString(),
+
+            ERole.OrderingCommand.ToString(),
+            ERole.OrderingQuery.ToString(),
+
+            ERole.PaymentCommand.ToString(),
+            ERole.PaymentQuery.ToString(),
+
+            ERole.WebhooksCommand.ToString(),
+            ERole.WebhooksQuery.ToString(),
         };
 }

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace poc.vertical.slices.net8.Extensions;
+namespace API.Ordering.Extensions;
 
 public static class ModelBuilderExtensions
 {

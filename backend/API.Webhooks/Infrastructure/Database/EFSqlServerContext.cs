@@ -1,5 +1,5 @@
-﻿using API.Webhooks.Domain.User;
-using API.Webhooks.Infrastructure.Database.Mappings;
+﻿using API.Webhooks.Infrastructure.Database.Mappings;
+using API.Webhooks.Infrastructure.Domain;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Webhooks.Infrastructure.Database;
@@ -12,11 +12,11 @@ public class EFSqlServerContext : DbContext
     public EFSqlServerContext(DbContextOptions<EFSqlServerContext> options) : base(options)
     { }
 
-    public virtual DbSet<UserEntity> User { get; set; }
+    public virtual DbSet<Article> Article { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.ApplyConfiguration(new UserConfiguration());
+        modelBuilder.ApplyConfiguration(new ArticleConfiguration());
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -25,7 +25,7 @@ public class EFSqlServerContext : DbContext
         base.OnConfiguring(optionsBuilder);
     }
 
-    public static readonly LoggerFactory _loggerFactory = new LoggerFactory(new[] {
+    public static readonly Microsoft.Extensions.Logging.LoggerFactory _loggerFactory = new LoggerFactory(new[] {
         new Microsoft.Extensions.Logging.Debug.DebugLoggerProvider()
     });
 }

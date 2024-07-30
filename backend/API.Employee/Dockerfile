@@ -14,7 +14,7 @@ WORKDIR /backend
 
 # Copia o arquivo .csproj para o diret rio de trabalho atual no cont iner
 COPY backend/API.Employee/API.Employee.csproj .
-COPY backend/BuildingBlocks/Domain/Domain.Employee/Domain.Employee.csproj .
+COPY backend/Common/Enumerable/Enumerable.csproj .
 
 # Restaura as depend ncias do projeto
 RUN dotnet restore API.Employee.csproj

@@ -101,7 +101,7 @@
         </tr>
         <tr>
             <td>Pasta:</td>
-            <td>cd C:\Work\poc.vertical.slices-full-stack-react.net8</td>
+            <td>cd C:\Work\gfmaurila\GitHub\EShopVerticalSlicesNET8</td>
         </tr>
         <tr>
             <td>Rodando a aplicação</td>
@@ -122,6 +122,10 @@
             <td>
                 <ul>
                     <li>Add-Migration Inicial -Context EFSqlServerContext</li>
+                    <li>Update-Database -Context EFSqlServerContext</li>
+                </ul>
+                <ul>
+                    <li>Add-Migration Article -Context EFSqlServerContext -StartupProject API.Admin</li>
                     <li>Update-Database -Context EFSqlServerContext</li>
                 </ul>
             </td>

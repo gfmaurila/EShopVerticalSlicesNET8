@@ -33,6 +33,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\API.Admin\API.Admin.csproj" />
+	  <ProjectReference Include="..\Common\Enumerable\Enumerable.csproj" />
 	</ItemGroup>
 
   <ItemGroup>

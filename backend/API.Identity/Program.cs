@@ -1,13 +1,10 @@
 using API.Identity.Extensions;
 using API.Identity.Infrastructure.Database;
-using API.Identity.Infrastructure.Database.Repositories;
-using API.Identity.Infrastructure.Database.Repositories.Interfaces;
 using Carter;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using poc.core.api.net8;
 using poc.core.api.net8.DistributedCache;
-using poc.vertical.slices.net8.Extensions;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,15 +25,6 @@ builder.Services.AddMediatR(config => config.RegisterServicesFromAssembly(assemb
 
 DistributedCacheInitializer.Initialize(builder.Services, builder.Configuration);
 CoreInitializer.Initialize(builder.Services);
-
-builder.Services.AddTransient<IUserRepository, UserRepository>();
-//builder.Services.Configure<CacheOptions1>(builder.Configuration.GetSection("CacheOptions"));
-
-//builder.Services.AddSingleton<IConfiguration>(provider => builder.Configuration);
-//builder.Services.AddSingleton<RedisConnection>();
-
-//builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(builder.Configuration.GetConnectionString("CacheConnection")));
-//builder.Services.AddScoped(typeof(IRedisCacheService<>), typeof(RedisCacheService<>));
 
 builder.Services.AddCarter();
 

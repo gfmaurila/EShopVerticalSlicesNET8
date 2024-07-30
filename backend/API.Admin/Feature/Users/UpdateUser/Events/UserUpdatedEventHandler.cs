@@ -1,6 +1,6 @@
-﻿using API.Admin.Domain.User.Events;
-using API.Admin.Feature.Users.GetUser;
+﻿using API.Admin.Feature.Users.GetUser;
 using API.Admin.Infrastructure.Database.Repositories.Interfaces;
+using API.Admin.Infrastructure.Domain.User.Events;
 using MediatR;
 using poc.core.api.net8.Interface;
 
